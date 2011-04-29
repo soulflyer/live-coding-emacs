@@ -22,7 +22,7 @@
 (add-to-list 'load-path dotfiles-lib-dir)
 (require 'dircolors)
 (require 'smooth-scrolling)
-(require 'rainbow-parens)
+;; (require 'rainbow-parens)
 (require 'rainbow-delimiters)
 
 (load-live-config-file "built-in.el")

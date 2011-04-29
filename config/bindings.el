@@ -14,6 +14,10 @@
 (global-set-key (kbd "s-b") 'ibuffer)
 (global-set-key (kbd "s-d") 'ido-dired)
 
+;;
+;; Put some bindings in my personal minor mode so they aren't overridden by other modes
+;;
+
 (defvar diw-minor-mode-map (make-keymap) "diw-minor-mode keymap")
 (define-key diw-minor-mode-map  (kbd "C-j") 'backward-char)
 (define-key diw-minor-mode-map  (kbd "C-l") 'forward-char)
