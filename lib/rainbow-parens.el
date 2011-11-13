@@ -40,16 +40,16 @@
 
 (defvar *rainbow-paren-faces*
   `[,(rainbow-paren-face-from-colour "dark red")
-    ,(rainbow-paren-face-from-colour "dark green")
-    ,(rainbow-paren-face-from-colour "deep pink")
-    ,(rainbow-paren-face-from-colour "yellow")
-    ,(rainbow-paren-face-from-colour "green")
-    ,(rainbow-paren-face-from-colour "light blue")
     ,(rainbow-paren-face-from-colour "orange")
-    ,(rainbow-paren-face-from-colour "slate blue")
-    ,(rainbow-paren-face-from-colour "light gray")
-    ,(rainbow-paren-face-from-colour "gold")
-    ,(rainbow-paren-face-from-colour "turquoise")])
+    ,(rainbow-paren-face-from-colour "darkgoldenrod")
+    ,(rainbow-paren-face-from-colour "darkgreen")
+    ,(rainbow-paren-face-from-colour "darkcyan")
+    ,(rainbow-paren-face-from-colour "darkblue")
+    ,(rainbow-paren-face-from-colour "purple")
+    ,(rainbow-paren-face-from-colour "magenta")
+    ,(rainbow-paren-face-from-colour "brown")
+    ,(rainbow-paren-face-from-colour "darkslategrey")
+    ,(rainbow-paren-face-from-colour "blue")])
 
 
 (defun rainbow-paren-this-paren-nesting ()
