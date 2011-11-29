@@ -29,7 +29,7 @@
       (foreground-color . "#EDEDED")
       (mouse-color . "sienna1"))
 
-     (hl-line ((t (:background "#333333"))))
+     (hl-line ((t (:background "#101010"))))
      (default ((t (:background "black" :foreground "#A9A9A9"))))
      (blue ((t (:foreground "blue"))))
      (bold ((t (:bold t))))
@@ -37,6 +37,9 @@
      (border-glyph ((t (nil))))
      (buffers-tab ((t (:background "#0C1021" :foreground "#F8F8F8"))))
 
+
+     ;;(show-paren-match ((((class color) (background dark)) (:background "red"))))
+     (show-paren-match ((t (:background "color-17"))))
 
      (font-lock-builtin-face ((t (:foreground "#4c83ff")))) ;; light blue
      (font-lock-comment-face ((t (:italic t :foreground "#8B8989"))))
@@ -65,7 +68,7 @@
      (isearch ((t (:background "yellow" :foreground "black"))))
      (isearch-fail ((t (:background "red4"))))
      (lazy-highlight ((t (:background "#333333"))))
-     (query-replace ((t (:background "#333333"))))
+     (query-replace ((t (":background #333333" ))))
      (Highline-face ((t (:background "SeaGreen"))))
      (italic ((t (nil))))
      (left-margin ((t (nil))))

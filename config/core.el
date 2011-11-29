@@ -1,14 +1,28 @@
 ;; Here is the root of your personal configs.
 ;; Either place config straight in here,
-;; such as this colour theme (feel free to change it to your own favourite theme)
 
-;; use blackbored colour theme
-(load-file (concat dotfiles-lib-dir "tg.el"))
-(color-theme-tg)
+;; (server-start)
+
+(set-keyboard-coding-system nil)
+
+;; Different stuff for Emacs and emacs
+(if (string= (invocation-name) "Emacs")
+    ;; stuff for mac Emacs goes here
+    (progn (load-file (concat dotfiles-lib-dir "tg.el"))
+                (color-theme-tg)
+                (menu-bar-mode 1)
+                (scroll-bar-mode 1))
+  ;; stuff for command line emacs goes here
+  (progn (load-file (concat dotfiles-lib-dir "blackbored.el"))
+                 (color-theme-blackbored)
+)
+)
+
 
 ;;Or load external files such as this bindings file:
 (load-dotfile "config/bindings.el")
 (server-mode 1)
+(visual-line-mode)
 ;; Fix the rainbow delimiters
 ;; rainbow-delimiters is included as part of the live-config.
 ;; rainbow-limiters should colour () {} and [] however there appears to be a bug
@@ -42,14 +56,11 @@
 (set-frame-parameter (selected-frame) 'alpha '(95 80))
 (add-to-list 'default-frame-alist '(alpha 95 80))
 
-;;Put up the menu and scroll bars
-(menu-bar-mode 1)
-(scroll-bar-mode 1)
 
 ;; Sensible ctrl-tab and shift-ctrl-tab cycling
 (require 'swbuff-x)
 (setq swbuff-display-intermediate-buffers t)
-(setq swbuff-clear-delay 0.5)
+(setq swbuff-clear-delay 1)
 
 ;;files open in new window
 ;;(setq pop-up-frames t)
