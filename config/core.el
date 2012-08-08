@@ -1,4 +1,6 @@
-;; Here is the root of your personal configs.
+
+
+
 ;; Either place config straight in here,
 
 ;; (server-start)
@@ -6,7 +8,8 @@
 (set-keyboard-coding-system nil)
 
 ;; Different stuff for Emacs and emacs
-(if (string= (invocation-name) "Emacs")
+(if (window-system)
+    ;; (string= (invocation-name) "Emacs")
     ;; stuff for mac Emacs goes here
     (progn (load-file (concat dotfiles-lib-dir "tg.el"))
                 (color-theme-tg)
@@ -14,25 +17,37 @@
                 (scroll-bar-mode 1))
   ;; stuff for command line emacs goes here
   (progn (load-file (concat dotfiles-lib-dir "blackbored.el"))
-                 (color-theme-blackbored)
-)
-)
+                 (color-theme-blackbored)))
 
 
 ;;Or load external files such as this bindings file:
 (load-dotfile "config/bindings.el")
-(server-mode 1)
-(visual-line-mode)
-;; Fix the rainbow delimiters
-;; rainbow-delimiters is included as part of the live-config.
-;; rainbow-limiters should colour () {} and [] however there appears to be a bug
-;; Starting it automatically doesn't colour all the ()'s
-;; rainbow-parens does colour all the ()'s, although it doesn't seem to allow
-;; customisation of the colours without editing the rainbow-parens.el file
-;; directly. Until this is fixed, just use both by adding rainbow-parens here..
 
-;;(require 'rainbow-parens)
-;;(add-hook 'clojure-mode-hook 'rainbow-paren-mode)
+(server-mode 1)
+(global-visual-line-mode t)
+;;(require 'mouse)
+;;(xterm-mouse-mode t)
+;;(defun track-mouse (e))
+;;(setq mouse-sel-mode t)
+
+(load-dotfile "lib/iy-go-to-char.el")
+;;Fix cut and paste from kill-ring to system clipboard
+(load-dotfile (concat "lib/pbcopy.el"))
+(require 'pbcopy)
+(turn-on-pbcopy)
+
+(require 'popup)
+(require 'pos-tip)
+(require 'popup-kill-ring)
+(require 'bitlbee)
+
+(setq same-window-regexps '("."))
+
+(autoload 'cycle-buffer "cycle-buffer" "Cycle forward." t)
+(autoload 'cycle-buffer-backward "cycle-buffer" "Cycle backward." t)
+(autoload 'cycle-buffer-permissive "cycle-buffer" "Cycle forward allowing *buffers*." t)
+(autoload 'cycle-buffer-backward-permissive "cycle-buffer" "Cycle backward allowing *buffers*." t)
+(autoload 'cycle-buffer-toggle-interesting "cycle-buffer" "Toggle if this buffer will be considered." t)
 
 (defun djcb-zoom (n)
   "with positive N, increase the font size, otherwise decrease it"
@@ -42,7 +57,8 @@
 ;;Make the fringes narrow
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
+
+ ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
   '(fringe-mode (quote (1 . 1)) nil (fringe))
@@ -66,8 +82,8 @@
 ;;(setq pop-up-frames t)
 
 ;;stop emacs from shitting all over my file system
-;;(setq make-backup-files nil) ; stop creating those backup~ files
-;;(setq auto-save-default nil) ; stop creating those #autosave# files
+(setq make-backup-files nil) ; stop creating those backup~ files
+(setq auto-save-default nil) ; stop creating those #autosave# files
 
 ;;Keep a recent files list
 (recentf-mode 1)

@@ -44,7 +44,7 @@
     ,(rainbow-paren-face-from-colour "darkgoldenrod")
     ,(rainbow-paren-face-from-colour "darkgreen")
     ,(rainbow-paren-face-from-colour "darkcyan")
-    ,(rainbow-paren-face-from-colour "darkblue")
+    ,(rainbow-paren-face-from-colour "lightblue")
     ,(rainbow-paren-face-from-colour "purple")
     ,(rainbow-paren-face-from-colour "magenta")
     ,(rainbow-paren-face-from-colour "brown")
